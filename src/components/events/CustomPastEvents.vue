@@ -3,14 +3,14 @@
     <v-container fluid>
         <v-snackbar v-model="errorAlert" bottom left>
             {{ errorMsg }}
-            <v-btn color="pink" text @click="errorAlert = false">Close</v-btn>
+            <v-btn color="pink" text @click="errorAlert = false">Cerrar</v-btn>
         </v-snackbar>
         <v-row align="center" justify="center" class="mb-5">
             <v-col cols="12" md="12" lg="12" sm="12" class="">
                 <v-row>
                     <v-col md="6" lg="6" sm="6" cols="12">
-                        <p class="google-font mb-0" style="font-size:150%;color: #1a73e8;">Directory of past events</p>
-                        <p class="google-font mt-0 mb-0" style="font-size:95%">Events are listed in reverse chronological order by date.</p>
+                        <p class="google-font mb-0" style="font-size:150%;color: #1a73e8;">Directorio de eventos pasados</p>
+                        <p class="google-font mt-0 mb-0" style="font-size:95%">Los eventos se enumeran en orden cronológico inverso por fecha.</p>
                     </v-col>
                     <v-col md="6" lg="6" sm="6" cols="12">
                         <v-text-field
@@ -19,7 +19,7 @@
                             solo-inverted
                             hide-details
                             prepend-inner-icon="mdi-search-web"
-                            label="Search"
+                            label="Buscar"
                             single-line
                             class="mr-2"
                         ></v-text-field>
@@ -41,7 +41,7 @@
                     </template>
 
                     <template v-slot:item.action="{ item }">
-                        <a :href="'/events/'+item.id" target="_blank">See More</a>
+                        <a :href="'/events/'+item.id" target="_blank">Ver más</a>
                     </template>
                 </v-data-table>
             </v-col>
@@ -69,13 +69,13 @@ import { mapState } from 'vuex'
             errorMsg: '',
             headers: [
                 {
-                    text: 'Event Name',
+                    text: 'Nombre del Evento',
                     align: 'start',
                     value: 'name',
                 },
-                { text: 'Date', value: 'date' },
-                { text: 'Venue', value: 'venue.name' },
-                { text: 'See More', value: 'action' },
+                { text: 'Fecha', value: 'date' },
+                // { text: 'Venue', value: 'venue.name' },
+                { text: 'Ver más', value: 'action' },
             ],
         }),
         mounted(){
